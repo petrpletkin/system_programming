@@ -1,5 +1,5 @@
 FROM debian
-COPY script.sh .
-RUN chmod +x script.sh
+COPY file_deskriptor_checker.sh .
+RUN chmod +x file_deskriptor_checker.sh
 RUN touch test_file.txt  # To check the script functionality
-CMD ./script.sh
+CMD ./file_deskriptor_checker.sh
