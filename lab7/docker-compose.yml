@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  sock_server:
+    build: .
+    ports:
+    - 5555:5555/tcp
+    - 5557:5557/udp
+    environment:
+      PYTHONUNBUFFERED: 1
+    command: "python3 -u server.py"
+
+  tcp_client:
+    build: .
+    environment:
+      SOCK_SERVER_HOST: sock_server
+      SOCK_SERVER_PORT: 5555
+      PYTHONUNBUFFERED: 1
+    command: "python3 -u client.py 1"
+
+  udp_client:
+    build: .
+    environment:
+      SOCK_SERVER_HOST: sock_server
+      SOCK_SERVER_PORT: 5557
+      PYTHONUNBUFFERED: 1
+    command: "python3 -u client.py 2"

@@ -1,0 +1,6 @@
+from socket import SOCK_STREAM, SOCK_DGRAM
+
+SOCK_TYPE_NAME = {
+    SOCK_DGRAM: "UDP",
+    SOCK_STREAM: "TCP"
+}
