@@ -25,13 +25,13 @@ def trigram_frequency_of_occurrence_calc(data_from_text: List[str]):
                 trigram_occurrences[trigram] = 1
         except IndexError:
             continue
-    count_if_trigrams = sum(trigram_occurrences.values())
+    count_of_trigrams = sum(trigram_occurrences.values())
     sorted_by_occurrences = sorted(trigram_occurrences.items(),
                                    key=lambda key_val: key_val[1],
                                    reverse=True)
 
     print()
-    print([(trigram, round(occurrences/count_if_trigrams, 5))
+    print([(trigram, round(occurrences/count_of_trigrams, 5))
            for trigram, occurrences in sorted_by_occurrences])
 
 

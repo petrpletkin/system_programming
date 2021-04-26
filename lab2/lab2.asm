@@ -1,8 +1,5 @@
 section .data
   msg db 'Sum: %u', 10, 0
-  sum_len equ $-msg
-
-  nextline db 10
 
   arr dd 0, 254, 126, 126, 126, 126, 126, 126, 126, 254
   arr_len equ 10
